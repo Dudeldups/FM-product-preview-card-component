@@ -19,7 +19,7 @@ This is a solution to the [Product preview card component challenge on Frontend 
 
 ### Links
 
-- [Solution on Frontend Mentor]()
+- [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/scss-product-preview-card-2w1fSPcAHt)
 - [Live site](https://dudeldups.github.io/FM-product-preview-card-component/)
 
 ## My process
