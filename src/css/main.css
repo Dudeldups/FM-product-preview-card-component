@@ -72,6 +72,11 @@ body {
   font: 500 0.875rem "Montserrat", sans-serif;
   color: hsl(228, 12%, 48%);
 }
+@media only screen and (min-width: 39.5em) {
+  body {
+    place-content: center;
+  }
+}
 
 .product__name,
 .product__price-new {
@@ -84,18 +89,32 @@ body {
   overflow: hidden;
   max-width: 23rem;
 }
+@media only screen and (min-width: 39.5em) {
+  .card {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    max-width: 37.5rem;
+  }
+}
 
 .product {
-  padding: 1.5rem;
+  padding: 2rem;
+}
+@media only screen and (min-width: 39.5em) {
+  .product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 .product__category {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.5em;
 }
 .product__name {
   margin-top: 1rem;
-  font-size: 1.9rem;
+  font-size: 1.95rem;
   color: hsl(212, 21%, 14%);
   line-height: 1;
 }
@@ -117,6 +136,7 @@ body {
   font-size: 0.8rem;
 }
 .product__button {
+  cursor: pointer;
   position: relative;
   margin-top: 1rem;
   padding: 1em;
@@ -124,6 +144,9 @@ body {
   background-color: hsl(158, 36%, 37%);
   color: hsl(0, 0%, 100%);
   border-radius: 8px;
+}
+.product__button:hover, .product__button:focus {
+  background-color: #244c3d;
 }
 .product__button::after {
   content: "";

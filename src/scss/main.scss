@@ -1,16 +1,18 @@
 @use "resets";
 @use "colors";
+@use "mixins" as *;
 
 body {
-  // font-family: "Fraunces", serif;
-  // font-family: "Montserrat", sans-serif;
-
   display: grid;
   place-content: start center;
   padding: 2rem 1rem;
   background: colors.$cream;
   font: 500 0.875rem "Montserrat", sans-serif;
   color: colors.$gray-blue;
+
+  @include desktop {
+    place-content: center;
+  }
 }
 
 .product__name,
@@ -23,20 +25,32 @@ body {
   border-radius: 10px;
   overflow: hidden;
   max-width: 23rem;
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    max-width: 37.5rem;
+  }
 }
 
 .product {
-  padding: 1.5rem;
+  padding: 2rem;
+
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
   &__category {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5em;
   }
 
   &__name {
     margin-top: 1rem;
-    font-size: 1.9rem;
+    font-size: 1.95rem;
     color: colors.$dark-blue;
     line-height: 1;
   }
@@ -63,6 +77,7 @@ body {
   }
 
   &__button {
+    cursor: pointer;
     position: relative;
     margin-top: 1rem;
     padding: 1em;
@@ -70,6 +85,11 @@ body {
     background-color: colors.$dark-cyan;
     color: colors.$white;
     border-radius: 8px;
+
+    &:hover,
+    &:focus {
+      background-color: darken($color: colors.$dark-cyan, $amount: 15%);
+    }
 
     &::after {
       content: "";
