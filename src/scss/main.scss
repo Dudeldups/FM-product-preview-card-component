@@ -1,0 +1,85 @@
+@use "resets";
+@use "colors";
+
+body {
+  // font-family: "Fraunces", serif;
+  // font-family: "Montserrat", sans-serif;
+
+  display: grid;
+  place-content: start center;
+  padding: 2rem 1rem;
+  background: colors.$cream;
+  font: 500 0.875rem "Montserrat", sans-serif;
+  color: colors.$gray-blue;
+}
+
+.product__name,
+.product__price-new {
+  font: 700 0.875rem "Fraunces", serif;
+}
+
+.card {
+  background: colors.$white;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 23rem;
+}
+
+.product {
+  padding: 1.5rem;
+
+  &__category {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+  }
+
+  &__name {
+    margin-top: 1rem;
+    font-size: 1.9rem;
+    color: colors.$dark-blue;
+    line-height: 1;
+  }
+
+  &__description {
+    margin-top: 1rem;
+    line-height: 1.7;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.2rem;
+
+    &-new {
+      font-size: 2rem;
+      color: colors.$dark-cyan;
+    }
+
+    &-old {
+      font-size: 0.8rem;
+    }
+  }
+
+  &__button {
+    position: relative;
+    margin-top: 1rem;
+    padding: 1em;
+    width: 100%;
+    background-color: colors.$dark-cyan;
+    color: colors.$white;
+    border-radius: 8px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url("../assets/images/icon-cart.svg");
+      inset: 0;
+      margin: auto;
+      transform: translateX(-4.2em);
+      height: 16px;
+      width: 15px;
+    }
+  }
+}
